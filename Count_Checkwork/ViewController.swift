@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     //nubmerという"Int"型の変数を設定する
     var number: Int = 0
     
-    //プラス、マイナス、ラベルの設定
+    //プラスボタン、マイナスボタン、ラベルの設定
     @IBOutlet var plus: UIButton!
     @IBOutlet var minnus: UIButton!
     @IBOutlet var label: UILabel!
@@ -26,15 +26,20 @@ class ViewController: UIViewController {
     @IBAction func add() {
         number = number + 1
         label.text = String(number)
+        //ifBranchという関数を呼び起こす
+        ifBranch()
     }
     
     //マイナスボタンを押した時に数を1減らしてテキストに反映する
     @IBAction func hiku() {
         number = number - 1
         label.text = String(number)
+        //ifBranchという関数を呼び起こす
+        ifBranch()
     }
     
     
+    //各種ボタンを押した時にテキストカラーを変える関数を設定する
     func ifBranch() {
         //numberが10を超えた時にラベルのテキストカラーを赤に変える
         if number > 10 {
